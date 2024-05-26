@@ -1,24 +1,3 @@
-// Parse and evaluate simple math word problems returning the answer as an integer.
-
-// ## Iteration 0 — Numbers
-
-// Problems with no operations simply evaluate to the number given.
-
-// > What is 5?
-
-// Evaluates to 5.
-
-// ## Iteration 1 — Addition
-
-// Add two numbers together.
-
-// > What is 5 plus 13?
-
-// Evaluates to 18.
-
-// Handle large numbers and negative numbers.
-
-// format question function
 const keywords = ['plus', 'multiplied'];
 
 function formatQuestion(str: string): any[] {
