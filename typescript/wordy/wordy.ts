@@ -1,17 +1,30 @@
-const keywords = ['plus', 'multiplied'];
+const keywords = ['plus', 'multiplied', 'minus'];
 
 function formatQuestion(str: string): any[] {
   str = str.replace('?', ''); // Remove the trailing question mark
   const parts = str.split(' ');
-  return parts.filter(part => !isNaN(Number(part)) || keywords.includes(part));
+  let formattedParts: any[] = [];
+
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i] === 'minus' && !isNaN(Number(parts[i + 1]))) {
+      formattedParts.push(-Number(parts[i + 1]));
+      i++; // Skip next part because we've already processed it
+    } else if (!isNaN(Number(parts[i])) || keywords.includes(parts[i])) {
+      formattedParts.push(parts[i]);
+    }
+  }
+
+  return formattedParts;
 }
 
 function runOperation(operation: any[]): number {
   const operations: { [key: string]: (a: number, b: number) => number } = {
     'plus': (a: number, b: number) => a + b,
-    'multiply': (a: number, b: number) => a * b,
+    'multiplied': (a: number, b: number) => a * b,
     'minus': (a: number, b: number) => a - b
   };
+
+  console.log(operation, 'RUN OPERATION');
 
   let result = Number(operation[0]);
 
