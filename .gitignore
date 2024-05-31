@@ -10,3 +10,9 @@ package.json
 .exercism
 HELP.md
 tsconfig.json
+.eslintrc
+.gitignore
+.npmrc
+babel.config.js
+LICENSE
+HINTS.md
