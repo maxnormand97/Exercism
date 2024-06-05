@@ -12,7 +12,8 @@ class Robot
 
   # default orient for robot?
   def self.orient(direction)
-    # guard clause here to say if its not part of the directions array method should return something
+    # guard clause here to say if its not part of
+    # the directions array method should return something
     bearing = direction
   end
 
